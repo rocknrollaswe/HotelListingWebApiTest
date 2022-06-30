@@ -110,6 +110,14 @@ namespace HotelListing.Migrations
                             CountryId = 2,
                             Name = "Grand Palladium",
                             Rating = 4.0
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Address = "Gothenburg",
+                            CountryId = 4,
+                            Name = "Grand Hotel",
+                            Rating = 4.0
                         });
                 });
 

@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelListing.Migrations
 {
     [DbContext(typeof(HotelListingDbContext))]
-    [Migration("20220629110624_SeededCountriesAndHotels")]
-    partial class SeededCountriesAndHotels
+    [Migration("20220629144611_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -111,6 +111,14 @@ namespace HotelListing.Migrations
                             Address = "Nassau",
                             CountryId = 2,
                             Name = "Grand Palladium",
+                            Rating = 4.0
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Address = "Gothenburg",
+                            CountryId = 4,
+                            Name = "Grand Hotel",
                             Rating = 4.0
                         });
                 });

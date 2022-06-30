@@ -60,7 +60,15 @@ namespace HotelListing.Data
                      Address = "Nassau",
                      CountryId = 2,
                      Rating = 4
-                 }
+                 },
+                  new Hotel
+                  {
+                      Id = 4,
+                      Name = "Grand Hotel",
+                      Address = "Gothenburg",
+                      CountryId = 4,
+                      Rating = 4
+                  }
 
                 );
         }
