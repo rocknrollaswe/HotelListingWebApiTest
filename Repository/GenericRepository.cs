@@ -8,13 +8,10 @@ namespace HotelListing.Repository
     {
         private HotelListingDbContext _context;
        
-
         public GenericRepository(HotelListingDbContext context)
         {
-            this._context = context;
-            
+            this._context = context;  
         }
-
 
         public async Task<T> AddAsync(T entity)
         {
@@ -28,7 +25,6 @@ namespace HotelListing.Repository
             var entity = await GetAsync(id);
             _context.Set<T>().Remove(entity);
             await _context.SaveChangesAsync();
-      
         }
 
         public async Task<bool> Exists(int id)
