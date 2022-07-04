@@ -4,11 +4,13 @@ using HotelListing.Data;
 using HotelListing.Models.Country;
 using AutoMapper;
 using HotelListing.IRepository;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HotelListing.Controllers 
 {
     [Route("api/[controller]")]
     [ApiController]
+    
     public class CountriesController : ControllerBase
     {
       
@@ -49,6 +51,7 @@ namespace HotelListing.Controllers
 
         // PUT: api/Countries/5
         [HttpPut("{id}")]
+        [Authorize]
         public async Task<IActionResult> PutCountry([FromRoute] int id, [FromBody] UpdateCountryDto updateCountryDto)
         {
             if (id != updateCountryDto.Id)
@@ -81,6 +84,7 @@ namespace HotelListing.Controllers
 
         // POST: api/Countries
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<Country>> PostCountry([FromBody] CreateCountryDto createCountry)
         {
 
@@ -95,6 +99,7 @@ namespace HotelListing.Controllers
 
         // DELETE: api/Countries/5
         [HttpDelete("{id}")]
+        [Authorize(Roles ="Administrator")]
         public async Task<IActionResult> DeleteCountry(int id)
         {
             var country = await _countriesRepository.GetAsync(id);

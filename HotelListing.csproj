@@ -4,10 +4,13 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>c8951432-41a0-4dc7-a9a9-4d0d9cc89529</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.6">
       <PrivateAssets>all</PrivateAssets>
