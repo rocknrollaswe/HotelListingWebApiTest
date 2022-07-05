@@ -1,6 +1,5 @@
-﻿using HotelListing.IRepository;
-using HotelListing.Models.User;
-using Microsoft.AspNetCore.Http;
+﻿using HotelListing.Core.IRepository;
+using HotelListing.Core.Models.User;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HotelListing.Controllers
@@ -10,10 +9,12 @@ namespace HotelListing.Controllers
     public class AccountController : ControllerBase
     {
         private readonly IAuthManager _authManager;
+        private readonly ILogger<AccountController> _logger;
 
-        public AccountController(IAuthManager authManager)
+        public AccountController(IAuthManager authManager, ILogger<AccountController> logger)
         {
             this._authManager = authManager;
+            this._logger = logger;
         }
 
         //POST: api/Account/register
@@ -24,8 +25,10 @@ namespace HotelListing.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult> Register([FromBody] ApiUserDto apiUserDto)
         {
-            var errors = await _authManager.Register(apiUserDto);
-
+            _logger.LogInformation($"Registration attempt for {apiUserDto.Email}");
+           
+           
+            var errors = await _authManager.Register(apiUserDto); 
             if (errors.Any())
             {
                 foreach (var error in errors)
@@ -34,6 +37,7 @@ namespace HotelListing.Controllers
                 }
                 return BadRequest(ModelState);
             }
+
             return Ok(); 
         }
 
@@ -45,11 +49,13 @@ namespace HotelListing.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult> Login([FromBody] LoginDto loginDto)
         {
+            _logger.LogInformation($"Login attempt for {loginDto.Email}");
+           
             var authResponse = await _authManager.Login(loginDto);
 
             if (authResponse == null)
             {
-                return Unauthorized(); 
+                return Unauthorized();
             }
 
             return Ok(authResponse);

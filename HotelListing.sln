@@ -5,6 +5,10 @@ VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelListing", "HotelListing.csproj", "{26094D18-4F62-46CF-8E6C-1C000C79D989}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelListing.Data", "..\HotelListing.Data\HotelListing.Data.csproj", "{4F7E633D-CCC9-473B-81A3-5D411C11559A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelListing.Core", "..\HotelListing.Core\HotelListing.Core.csproj", "{1B81AE52-61F7-4938-BE55-3AB0D49F987E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{26094D18-4F62-46CF-8E6C-1C000C79D989}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26094D18-4F62-46CF-8E6C-1C000C79D989}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26094D18-4F62-46CF-8E6C-1C000C79D989}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F7E633D-CCC9-473B-81A3-5D411C11559A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F7E633D-CCC9-473B-81A3-5D411C11559A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F7E633D-CCC9-473B-81A3-5D411C11559A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F7E633D-CCC9-473B-81A3-5D411C11559A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B81AE52-61F7-4938-BE55-3AB0D49F987E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B81AE52-61F7-4938-BE55-3AB0D49F987E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B81AE52-61F7-4938-BE55-3AB0D49F987E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B81AE52-61F7-4938-BE55-3AB0D49F987E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
